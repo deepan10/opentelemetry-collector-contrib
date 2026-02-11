@@ -180,7 +180,7 @@ func (r TracesUnmarshaler) UnmarshalTraces(buf []byte) (ptrace.Traces, error) {
 			scheme := urlObj.Scheme
 
 			var hostpath string
-			if len(azureTrace.Name) > 0 {
+			if azureTrace.Name != "" {
 				parts := bytes.Fields([]byte(azureTrace.Name))
 				if len(parts) > 1 {
 					hostpath = string(parts[1])
